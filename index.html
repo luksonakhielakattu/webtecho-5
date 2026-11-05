@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speed Wheels - Bike Showroom</title>
+
+<style>
+
+/* GENERAL STYLING */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+header {
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #15191f;
+    color: white;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ed2939;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: #ed2939;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #e32636;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #15191f;
+}
+
+/* HERO SECTION */
+
+.hero {
+    padding: 70px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    background: #fff;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 20px 0;
+    line-height: 1.2;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+p {
+    color: #666;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.highlight {
+    color: #e32636;
+    font-style: italic;
+}
+
+.art {
+    height: 320px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #252b35, #e32636);
+    display: grid;
+    place-items: center;
+    font-size: 110px;
+}
+
+/* BIKE COLLECTION */
+
+section {
+    padding: 55px 8%;
+}
+
+.center {
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px #00000008;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px #00000015;
+}
+
+.card h3 {
+    margin: 15px 0;
+    color: #d82030;
+}
+
+.icon {
+    font-size: 40px;
+}
+
+/* TEST RIDE SECTION */
+
+.test-ride {
+    background: #fff0f0;
+    border-radius: 18px;
+    padding: 35px;
+    text-align: center;
+}
+
+.bike-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #e32636;
+    color: white;
+    margin: 25px auto;
+    display: grid;
+    place-items: center;
+    font-size: 55px;
+    transition: transform 1s ease-in-out;
+}
+
+.grow {
+    transform: scale(1.2);
+}
+
+/* ENQUIRY FORM */
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0 18px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #e32636;
+}
+
+/* RESULT */
+
+#result {
+    white-space: pre-wrap;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #15191f;
+    color: white;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        margin-left: 8px;
+        font-size: 12px;
+    }
+
+    .art {
+        height: 250px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+    <div class="logo">SPEED WHEELS.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#bikes">Bikes</a>
+        <a href="#testride">Test Ride</a>
+        <a href="#enquiry">Enquiry</a>
+    </nav>
+
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <small>PREMIUM MOTORCYCLE SHOWROOM</small>
+
+        <h1>
+            Find Your
+            <span class="highlight">Perfect Ride.</span>
+        </h1>
+
+        <p>
+            Discover powerful motorcycles, stylish designs
+            and exciting riding experiences at Speed Wheels.
+        </p>
+
+        <button onclick="exploreBikes()">
+            Explore Bikes →
+        </button>
+
+    </div>
+
+    <div class="art">
+        🏍️
+    </div>
+
+</section>
+
+
+<!-- BIKE COLLECTION -->
+
+<section id="bikes">
+
+    <div class="center">
+
+        <h2>Explore Our Bike Collection</h2>
+
+        <p>Choose your favourite motorcycle from our premium collection.</p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">🏍️</div>
+
+            <h3>Royal Enfield Classic 350</h3>
+
+            <p>
+                Experience classic styling and comfortable
+                cruising with powerful performance.
+            </p>
+
+            <button class="details">View Details</button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🏍️</div>
+
+            <h3>KTM Duke 390</h3>
+
+            <p>
+                Enjoy thrilling performance and aggressive
+                styling with this powerful street bike.
+            </p>
+
+            <button class="details">View Details</button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🏍️</div>
+
+            <h3>Yamaha R15 V4</h3>
+
+            <p>
+                Experience sporty design, advanced features
+                and exciting riding performance.
+            </p>
+
+            <button class="details">View Details</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TEST RIDE -->
+
+<section id="testride">
+
+    <div class="test-ride">
+
+        <h2>Experience Your Dream Bike</h2>
+
+        <p id="rideText">
+            Ready to experience your favourite motorcycle?
+        </p>
+
+        <div class="bike-circle" id="bikeCircle">
+            🏍️
+        </div>
+
+        <button id="rideBtn">
+            Start Test Ride Experience
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CUSTOMER ENQUIRY -->
+
+<section id="enquiry">
+
+    <div class="center">
+
+        <h2>Book Your Dream Bike</h2>
+
+        <p>Submit your details and our showroom team will assist you.</p>
+
+    </div>
+
+    <form id="enquiryForm">
+
+        <label for="customerName">Customer Name</label>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Enter your name"
+            required
+        >
+
+        <label for="email">Email Address</label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label for="bike">Select Your Bike</label>
+
+        <select id="bike" required>
+
+            <option value="">Choose a motorcycle</option>
+
+            <option>Royal Enfield Classic 350</option>
+
+            <option>KTM Duke 390</option>
+
+            <option>Yamaha R15 V4</option>
+
+        </select>
+
+        <label for="message">Your Enquiry</label>
+
+        <textarea
+            id="message"
+            rows="4"
+            placeholder="Write your enquiry here..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            Submit Enquiry
+        </button>
+
+    </form>
+
+    <p id="result"></p>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>SPEED WHEELS</h3>
+
+    <p style="color:white;">
+        Your Destination for Premium Motorcycles.
+    </p>
+
+    <p style="color:#aaa;">
+        © 2026 Speed Wheels Bike Showroom. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+// 1. CLICK EVENT: EXPLORE BIKES
+
+function exploreBikes() {
+
+    document.getElementById("bikes")
+        .scrollIntoView({ behavior: "smooth" });
+
+}
+
+
+// 2. DOM ELEMENTS: BIKE DETAILS
+
+document.querySelectorAll(".details").forEach(function(btn) {
+
+    btn.addEventListener("click", function() {
+
+        let bikeName =
+            btn.parentElement.querySelector("h3").innerText;
+
+        alert(
+            "Welcome to Speed Wheels!\n\n" +
+            "You selected: " + bikeName +
+            "\nVisit our showroom for more details."
+        );
+
+    });
+
+});
+
+
+// 3. CLICK EVENT: NAVIGATE TO TEST RIDE
+
+document.getElementById("rideBtn")
+    .addEventListener("click", function() {
+
+        document.getElementById("rideText").innerText =
+            "Your test ride experience has started!";
+
+        document.getElementById("bikeCircle")
+            .classList.toggle("grow");
+
+    });
+
+
+// 4. DOM MANIPULATION: BIKE COLLECTION
+
+let bikeCards = document.getElementsByClassName("card");
+
+console.log("Total bikes available: " + bikeCards.length);
+
+
+// 5. DOM MANIPULATION: FIND ELEMENTS BY TAG NAME
+
+let headings = document.getElementsByTagName("h3");
+
+console.log("Total H3 headings: " + headings.length);
+
+
+// 6. CSS SELECTOR: QUERY SELECTOR ALL
+
+let allButtons = document.querySelectorAll("button");
+
+console.log("Total buttons: " + allButtons.length);
+
+
+// 7. SUBMIT EVENT: CUSTOMER ENQUIRY
+
+document.getElementById("enquiryForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("customerName").value;
+
+        const email =
+            document.getElementById("email").value;
+
+        const bike =
+            document.getElementById("bike").value;
+
+        const message =
+            document.getElementById("message").value;
+
+        document.getElementById("result").innerText =
+
+            "ENQUIRY SUBMITTED SUCCESSFULLY!\n\n" +
+            "Customer Name: " + name +
+            "\nEmail: " + email +
+            "\nSelected Bike: " + bike +
+            "\nEnquiry: " + message;
+
+        alert("Thank you! Your enquiry has been submitted.");
+
+    });
+
+
+// 8. KEYDOWN EVENT: ESCAPE KEY
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        console.log("Escape key pressed.");
+
+    }
+
+});
+
+
+// 9. CHANGE EVENT: BIKE SELECTION
+
+document.getElementById("bike")
+    .addEventListener("change", function() {
+
+        console.log("Selected Bike: " + this.value);
+
+    });
+
+
+// 10. DOCUMENT LOAD EVENT
+
+window.addEventListener("load", function() {
+
+    console.log("Speed Wheels website loaded successfully.");
+
+});
+
+</script>
+
+</body>
+</html>
